@@ -27,6 +27,7 @@ const pngquant = require('imagemin-pngquant'); // imagemin plugin
 const purgecss = require('gulp-purgecss'); // Remove Unused CSS from Styles
 const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P
 const includePartials = require('gulp-file-include'); //For supporting partials if required
+const version = require('gulp-version-number');
 
 //Load Previews on Browser on dev
 function livePreview(done) {
@@ -59,7 +60,7 @@ function devStyles() {
   return src(`${options.paths.src.css}/**/*.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer()]))
-    .pipe(concat({ path: 'style.css' }))
+    .pipe(concat({ path: 'app.css' }))
     .pipe(dest(options.paths.dist.css));
 }
 
@@ -69,7 +70,7 @@ function devScripts() {
     `${options.paths.src.js}/**/*.js`,
     `!${options.paths.src.js}/**/external/*`,
   ])
-    .pipe(concat({ path: 'scripts.js' }))
+    .pipe(concat({ path: 'app.js' }))
     .pipe(dest(options.paths.dist.js));
 }
 
@@ -89,6 +90,32 @@ function devThirdParty() {
   return src(`${options.paths.src.thirdParty}/**/*`).pipe(
     dest(options.paths.dist.thirdParty),
   );
+}
+
+function devVersionNumber() {
+  var versionConfig = {
+    value: '%MDS%',
+    cover: 1,
+    append: {
+      to: [
+        {
+          type: 'js',
+          key: 'v',
+          cover: 1,
+          files: ['app.js'],
+        },
+        {
+          type: 'css',
+          key: 'v',
+          cover: 1,
+          files: ['app.css'],
+        },
+      ],
+    },
+  };
+  return src(`${options.paths.src.base}/**/*.{html,}`)
+    .pipe(version(versionConfig))
+    .pipe(dest(options.paths.dist.base));
 }
 
 function watchFiles() {
@@ -196,6 +223,7 @@ function prodFonts() {
 }
 
 function prodThirdParty() {
+  style;
   return src(`${options.paths.src.thirdParty}/**/*`).pipe(
     dest(options.paths.build.thirdParty),
   );
@@ -221,7 +249,15 @@ function buildFinish(done) {
 
 exports.default = series(
   devClean, // Clean Dist Folder
-  parallel(devStyles, devScripts, devImages, devFonts, devThirdParty, devHTML), //Run All tasks in parallel
+  parallel(
+    devStyles,
+    devScripts,
+    devImages,
+    devFonts,
+    devThirdParty,
+    devHTML,
+    devVersionNumber,
+  ), //Run All tasks in parallel
   livePreview, // Live Preview Build
   watchFiles, // Watch for Live Changes
 );
