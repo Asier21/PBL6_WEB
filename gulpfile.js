@@ -151,8 +151,29 @@ function devClean() {
 
 //Production Tasks (Optimized Build for Live/Production Sites)
 function prodHTML() {
+  var versionConfig = {
+    value: '%MDS%',
+    cover: 1,
+    append: {
+      to: [
+        {
+          type: 'js',
+          key: 'v',
+          cover: 1,
+          files: ['app.js'],
+        },
+        {
+          type: 'css',
+          key: 'v',
+          cover: 1,
+          files: ['app.css'],
+        },
+      ],
+    },
+  };
   return src(`${options.paths.src.base}/**/*.{html,}`)
     .pipe(includePartials())
+    .pipe(version(versionConfig))
     .pipe(dest(options.paths.build.base));
 }
 
@@ -160,33 +181,17 @@ function prodStyles() {
   const tailwindcss = require('tailwindcss');
   const autoprefixer = require('autoprefixer');
   const cssnano = require('cssnano');
-  return (
-    src(`${options.paths.src.css}/**/*.scss`)
-      .pipe(sass().on('error', sass.logError))
-      .pipe(
-        postcss([
-          tailwindcss(options.config.tailwindjs),
-          autoprefixer(),
-          cssnano(),
-        ]),
-      )
-      // .pipe(
-      //   purgecss({
-      //     ...options.config.purgecss,
-      //     defaultExtractor: (content) => {
-      //       // without arbitray selectors
-      //       // const v2Regex = /[\w-:./]+(?<!:)/g;
-      //       // with arbitray selectors
-      //       const v3Regex = /[(\([&*\])|\w)-:./]+(?<!:)/g;
-      //       const broadMatches = content.match(v3Regex) || [];
-      //       const innerMatches =
-      //         content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
-      //       return broadMatches.concat(innerMatches);
-      //     },
-      //   })
-      // )
-      .pipe(dest(options.paths.build.css))
-  );
+  return src(`${options.paths.src.css}/**/*.scss`)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(
+      postcss([
+        tailwindcss(options.config.tailwindjs),
+        autoprefixer(),
+        cssnano(),
+      ]),
+    )
+    .pipe(concat({ path: 'app.css' }))
+    .pipe(dest(options.paths.build.css));
 }
 
 function prodScripts() {
@@ -194,7 +199,7 @@ function prodScripts() {
     `${options.paths.src.js}/libs/**/*.js`,
     `${options.paths.src.js}/**/*.js`,
   ])
-    .pipe(concat({ path: 'scripts.js' }))
+    .pipe(concat({ path: 'app.js' }))
     .pipe(uglify())
     .pipe(dest(options.paths.build.js));
 }
@@ -223,7 +228,6 @@ function prodFonts() {
 }
 
 function prodThirdParty() {
-  style;
   return src(`${options.paths.src.thirdParty}/**/*`).pipe(
     dest(options.paths.build.thirdParty),
   );
@@ -254,8 +258,8 @@ exports.default = series(
     devScripts,
     devImages,
     devFonts,
-    devThirdParty,
     devHTML,
+    devThirdParty,
     devVersionNumber,
   ), //Run All tasks in parallel
   livePreview, // Live Preview Build
@@ -268,8 +272,8 @@ exports.prod = series(
     prodStyles,
     prodScripts,
     prodImages,
-    prodHTML,
     prodFonts,
+    prodHTML,
     prodThirdParty,
   ), //Run All tasks in parallel
   buildFinish,
