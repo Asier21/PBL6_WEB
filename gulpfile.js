@@ -49,8 +49,13 @@ function previewReload(done) {
 
 //Development Tasks
 function devHTML() {
-  return src(`${options.paths.src.base}/**/*.html`)
-    .pipe(includePartials())
+  return src(['src/includes/*.html', 'src/*.html'])
+    .pipe(
+      includePartials({
+        prefix: '@@',
+        basepath: '@file',
+      }),
+    )
     .pipe(dest(options.paths.dist.base));
 }
 
@@ -172,7 +177,12 @@ function prodHTML() {
     },
   };
   return src(`${options.paths.src.base}/**/*.{html,}`)
-    .pipe(includePartials())
+    .pipe(
+      includePartials({
+        prefix: '@@',
+        basepath: '@file',
+      }),
+    )
     .pipe(version(versionConfig))
     .pipe(dest(options.paths.build.base));
 }
