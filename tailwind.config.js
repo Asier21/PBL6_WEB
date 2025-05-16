@@ -21,5 +21,10 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: plugins,
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 };
+

@@ -2,15 +2,279 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="./css/app.css" />
-  <title>Document</title>
+  <script src="js/app.js?v=468021e428d3c0e0d3c4295f9e8fe795" defer></script>
+  <title>PBL6</title>
+  <!-- Matomo -->
+  <script>
+    var _paq = (window._paq = window._paq || []);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+    (function () {
+      var u = "//localhost:8080/";
+      _paq.push(["setTrackerUrl", u + "matomo.php"]);
+      _paq.push(["setSiteId", "2"]);
+      var d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.async = true;
+      g.src = u + "matomo.js";
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </head>
 
-<body>
+<body class="bg-blue-50 dark:bg-gray-900">
   @@include('./includes/header.html')
-  <h1 class="text-3xl">Hello World with Tailwind</h1>
+
+  <main>
+    <section id="ZerEgin" class="py-10 px-6">
+      <div class="max-w-5xl mx-auto flex flex-wrap gap-6 justify-center">
+        <div
+          class="w-full sm:w-[calc(50%-12px)] bg-blue-200  dark:bg-blue-800 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">IoT gailu onenak</h3>
+          <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil?</p>
+        </div>
+        <div
+          class="w-full sm:w-[calc(50%-12px)] bg-blue-500  dark:bg-blue-900 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Estrategia</h3>
+          <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div
+          class="w-full sm:w-[calc(50%-12px)] bg-blue-300  dark:bg-blue-950 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Mugikorretarako aplikazioa</h3>
+          <p class="text-sm"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. ...</p>
+        </div>
+        <div
+          class="w-full sm:w-[calc(50%-12px)] bg-blue-400  dark:bg-blue-700 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Neurrira egindako garapenak</h3>
+          <p class="text-sm">Neurrira egindako proiektuak diseinatzen eta garatzen esperientzia</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Bloga" class="py-12  w-auto">
+      <h1 class="text-center text-5xl text-black mb-10 font-bold dark:text-white">BLOGA</h1>
+      <div class="flex flex-wrap justify-center gap-6 px-6 max-w-7xl mx-auto">
+
+        <div
+          class="bg-white  dark:bg-gray-300 rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
+          <div>
+            <h2 class="text-lg font-semibold mb-2">57.000 lagunekin osatu da Egunean Behinen 17. denboraldia
+            </h2>
+            <p class="text-sm text-gray-600 mb-6">2025/04/10</p>
+          </div>
+          <div class="flex items-center">
+            <img src="./img/rana_bb.jpeg" alt="Autor" class="rounded-full w-10 h-10 mr-3 bg-[#bdd500]" />
+            <p class="text-sm font-bold text-black">Gustavo</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-300  rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
+          <div>
+            <h2 class="text-lg font-semibold mb-2">Lanaren zentzua CodeSyntaxen: lanaren zentzuari buruzko
+              hausnarketa</h2>
+            <p class="text-sm text-gray-600 mb-6">2025/04/06</p>
+          </div>
+          <div class="flex items-center">
+            <div class="text-xl font-bold text-black mr-2">
+              <img src="./img/sapoo.jpeg" alt="Autor" class="rounded-full w-10 h-10 mr-3 bg-[#bdd500]" />
+            </div>
+            <p class="text-sm font-bold text-black">Sapete</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-300  rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
+          <div>
+            <h2 class="text-lg font-semibold mb-2">MAK21 Ikerketa proiektua arrakastaz amaitu da</h2>
+            <p class="text-sm text-gray-600 mb-6">2025/04/01</p>
+          </div>
+          <div class="flex items-center">
+            <div class="text-xl font-bold text-black mr-2">
+              <img src="./img/frogi.jpg" alt="Autor" class="rounded-full w-10 h-10 mr-3 bg-[#bdd500]" />
+            </div>
+            <p class="text-sm font-bold text-black">Frogi</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- ------------------------------------------------------------------------- -->
+
+    <section id="container_queries" class="p-8">
+      <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">Container Queries Demo</h2>
+
+      <!-- Contenedor redimensionable marcado como @container -->
+      <div id="resizableContainer"
+        class="@container relative bg-blue-600 dark:blue-green-800 shadow-lg rounded-lg border resize-x overflow-auto mx-auto"
+        style="min-width: 200px; max-width: 80%; ">
+        <!-- Flex wrap en 3 columnas, centrado -->
+        <div class="flex flex-wrap justify-center gap-6 p-4">
+          <!-- Cada card ocupa 1/3 del contenedor en pantallas grandes -->
+          <div
+            class="flex-1 basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white dark:bg-gray-600 p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/rana_bb.jpeg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold dark:text-white">Rana Gustavo</p>
+            <h1 class="mt-2 text-lg font-bold @md:block dark:text-white hidden">Title</h1>
+            <p class="text-sm text-gray-600 @md:block dark:text-white hidden">Description</p>
+          </div>
+
+          <div
+            class="flex-1  dark:bg-gray-600 basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/sapoo.jpeg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold dark:text-white">Sapazo</p>
+            <h1 class="mt-2 text-lg font-bold @md:block  dark:text-white hidden">Title</h1>
+            <p class="text-sm text-gray-600 @md:block  dark:text-white hidden">Description</p>
+          </div>
+
+          <div
+            class="flex-1  dark:bg-gray-600 basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/frogi.jpg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold  dark:text-white">Frogi</p>
+            <h1 class="mt-2 text-lg font-bold  dark:text-white @md:block hidden">Title</h1>
+            <p class="text-sm text-gray-600  dark:text-white @md:block hidden">Description</p>
+          </div>
+          <div
+            class="flex-1  dark:bg-gray-600 basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/rana_bb.jpeg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold  dark:text-white">Rana Gustavo</p>
+            <h1 class="mt-2 text-lg font-bold @md:block  dark:text-white hidden">Title</h1>
+            <p class="text-sm text-gray-600 @md:block dark:text-white hidden">Description</p>
+          </div>
+
+          <div
+            class="flex-1  dark:bg-gray-600 last:basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/sapoo.jpeg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold dark:text-white">Sapazo</p>
+            <h1 class="mt-2 text-lg font-bold @md:block hidden dark:text-white">Title</h1>
+            <p class="text-sm text-gray-600 @md:block hidden dark:text-white">Description</p>
+          </div>
+
+          <div
+            class="flex-1  dark:bg-gray-600 basis-full sm:basis-1/2 lg:basis-1/3 max-w-xs bg-white p-4 shadow-md rounded-lg flex flex-col items-center">
+            <img src="./img/frogi.jpg" class="w-24 h-24 rounded-full object-cover" alt="Autor" />
+            <p class="mt-2 font-semibold dark:text-white">Frogi</p>
+            <h1 class="mt-2 text-lg font-bold @md:block hidden dark:text-white">Title</h1>
+            <p class="text-sm text-gray-600 @md:block hidden dark:text-white">Description</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón para resetear tamaño -->
+      <div class="text-center mt-4">
+        <button onclick="resetSize()" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          Resize
+        </button>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------------- -->
+
+    <section id="Harpidetu" class="bg-pink-200 rounded-xl py-8 max-w-3xl mx-auto px-4 dark:bg-gray-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <h3 class="flex items-baseline mb-4">
+          <p class="text-4xl font-bold dark:text-white">Harpidetu</p>
+          <span class="ml-4 text-4xl dark:text-white">gure boletinera</span>
+        </h3>
+
+        <p class="text-lg mb-6 dark:text-white">Eman zure posta eta jaso blogeko azken berriak</p>
+
+        <form id="harpidetuForm" class="flex flex-col">
+          <div class="mb-4">
+            <label for="fieldName" class="block mb-1 dark:text-white">Izena</label>
+            <input id="fieldName" name="cm-name" type="text" placeholder="Izena"
+              class="w-full bg-white  rounded-xl px-4 py-3" />
+          </div>
+
+          <div class="mb-6">
+            <label for="fieldEmail" class="block mb-1 dark:text-white">Eposta</label>
+            <input id="fieldEmail" name="email" type="email" placeholder="Eposta" required
+              class="w-full bg-white rounded-xl px-4 py-3" />
+          </div>
+
+          <button type="submit"
+            class="bg-black text-white font-semibold px-6 py-3 rounded-md w-fit hover:bg-gray-800 dark:text-black dark:bg-white dark:hover:bg-gray-300">
+            Harpidetu
+          </button>
+        </form>
+      </div>
+    </section>
+    <section id="efect" class="flex justify-center items-center gap-10 p-10">
+      <div>
+        <img id="filteredImage" src="./img/asdfgh.jpg" alt="LaRosa"
+          class="rounded-xl w-80 h-auto transition-all duration-300" />
+      </div>
+      <div class="space-y-4">
+
+        <p class="text-xl font-bold mb-4 dark:text-white">Lista de filtros <span></span> </p>
+
+        <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('grayscale(100%)')">
+          <div class="w-6 h-6 rounded-full bg-gradient-to-r from-white to-black border border-black"></div>
+          <span class="dark:text-white">White/Black</span>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('sepia(100%)')">
+          <div class="w-6 h-6 rounded-full bg-yellow-800 border border-black"></div>
+          <span class="dark:text-white">Sepia</span>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('saturate(200%)')">
+          <div class="w-6 h-6 rounded-full bg-red-400 border border-black"></div>
+          <span class="dark:text-white">Saturado</span>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('blur(3px)')">
+          <div class="w-6 h-6 rounded-full bg-blue-400 border border-black"></div>
+          <span class="dark:text-white">Desenfoque</span>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('none')">
+          <div
+            class="w-6 h-6 rounded-full border bg-gradient-to-r from-green-100 to-fuchsia-300 via-blue-300 border-black">
+          </div>
+          <span class="dark:text-white">Sin filtro</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="flex justify-center items-center gap-10 p-10">
+      <div class="perspective-1000">
+        <img id="tiltImage" src="./img/rana_bb.jpeg" alt="The frog"
+          class="rounded-md transition-transform duration-100 will-change-transform" />
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <p class="text-xl font-bold dark:text-white">Do you like the 3D picture?</p>
+
+        <div class="flex flex-col items-center gap-2">
+          <svg id="heartIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            class="w-12 h-12 text-gray-300 transition-all duration-300">
+            <path
+              d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 13.75 5.08C14.59 3.81 16.26 3 18 3C21.03 3 23.5 5.46 23.5 8.5C23.5 13.5 16 21 16 21H12Z"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" />
+          </svg>
+
+          <input type="range" id="heartRange" min="0" max="100" value="0" class="w-48 accent-pink-500" />
+        </div>
+      </div>
+
+      <div id="confettiContainer" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 hidden"></div>
+    </section>
+
+
+
+  </main>
+  @@include('./includes/footer.html')
+
+
 </body>
 
 </html>

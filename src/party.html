@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/app.css" />
+    <script src="js/app.js?v=468021e428d3c0e0d3c4295f9e8fe795" defer></script>
+    <title>Party</title>
+    <!-- Matomo -->
+    <script>
+        var _paq = (window._paq = window._paq || []);
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+        (function () {
+            var u = "//localhost:8080/";
+            _paq.push(["setTrackerUrl", u + "matomo.php"]);
+            _paq.push(["setSiteId", "2"]);
+            var d = document,
+                g = d.createElement("script"),
+                s = d.getElementsByTagName("script")[0];
+            g.async = true;
+            g.src = u + "matomo.js";
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</head>
+
+<body class="bg-blue-50 dark:bg-gray-900">
+    @@include('./includes/header.html')
+
+    <main>
+        <section class="p-6 bg-white">
+            <div
+                class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+
+                <!-- Tarjeta grande -->
+                <div class="relative col-span-2 row-span-2 rounded-xl overflow-hidden">
+                    <img src="./img/frogi.jpg" alt="Treehouses" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Treehouses
+                    </div>
+                </div>
+
+                <!-- Tarjeta normal -->
+                <div class="relative rounded-xl overflow-hidden">
+                    <img src="./img/frogi.jpg" alt="Mansions" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Mansions
+                    </div>
+                </div>
+
+                <!-- Tarjeta normal -->
+                <div class="relative rounded-xl overflow-hidden">
+                    <img src="./img/sapoo.jpeg" alt="Lakefront cottages" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Lakefront cottages
+                    </div>
+                </div>
+
+                <!-- Tarjeta horizontal -->
+                <div class="relative col-span-2 rounded-xl overflow-hidden">
+                    <img src="./img/rana_bb.jpeg" alt="Designer homes" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Designer homes
+                    </div>
+                </div>
+
+                <!-- Más tarjetas -->
+                <div class="relative rounded-xl overflow-hidden">
+                    <img src="./img/sapoo.jpeg" alt="Cabins" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Cabins
+                    </div>
+                </div>
+
+                <div class="relative col-span-2 row-span-1 rounded-xl overflow-hidden">
+                    <img src="./img/frogi.jpg" alt="Modern Lofts" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Modern Lofts
+                    </div>
+                </div>
+
+                <!-- Tarjeta tipo 6: Ancha baja -->
+                <div class="relative col-span-2 row-span-1 rounded-xl overflow-hidden">
+                    <img src="./img/rana_bb.jpeg" alt="Modern Lofts" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Modern Lofts
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Tarjeta tipo 10: Horizontal gif -->
+                <div class="relative col-span-2 rounded-xl overflow-hidden">
+                    <img src="./img/sapoo.jpeg" alt="Luxury Pods" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
+                        Luxury Pods
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+    @@include('./includes/footer.html')
+
+
+</body>
+
+</html>
