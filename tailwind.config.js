@@ -19,7 +19,20 @@ module.exports = {
   content: ['./src/**/*.{html,js}'],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        c1: 'var(--c-1)',
+        c2: 'var(--c-2)',
+        c3: 'var(--c-3)',
+        c4: 'var(--c-4)',
+        c5: 'var(--c-5)',
+        dc1: 'var(--dc-1)',
+        dc2: 'var(--dc-2)',
+        dc3: 'var(--dc-3)',
+        dc4: 'var(--dc-4)',
+        dc5: 'var(--dc-5)',
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/container-queries'),

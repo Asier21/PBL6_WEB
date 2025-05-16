@@ -28,43 +28,95 @@
   <!-- End Matomo Code -->
 </head>
 
-<body class="bg-blue-50 dark:bg-gray-900">
+<body class="bg-blue-50 dark:bg-gray-900" style=>
   @@include('./includes/header.html')
 
   <main>
+    <section id="anuncio">
+      <!-- Modal overlay -->
+      <div id="welcome-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidde">
+        <!-- Modal content -->
+        <div
+          class=" relative bg-blue-100 dark:bg-[#1e293b] text-gray-800 dark:text-gray-100 rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl animate-fadeIn border border-gray-200 dark:border-gray-700">
+
+          <!-- Botón de cierre -->
+          <button id="close-modal"
+            class="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-2xl transition">
+            &times;
+          </button>
+
+          <!-- Icono o emoji opcional -->
+          <div class="mb-4 text-4xl">🚀</div>
+
+          <!-- Título -->
+          <h2 class="text-2xl font-bold mb-3">Ongi etorri IoTrack-era!</h2>
+
+          <!-- Texto -->
+          <p class="mb-6 text-base leading-relaxed">
+            Gure IoT soluzio adimendunek zure gailuen jarraipena eta kontrola erraztuko dute. Ez galdu aukera hau!
+          </p>
+
+          <!-- Botón CTA -->
+          <a href="/pricing.html"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all">
+            📦 Kontratatu orain
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="relative bg-cover bg-center bg-no-repeat h-screen text-white flex items-center"
+      style="background-image: url('./img/banner.png');">
+
+      <div class="dark:absolute dark:inset-0 dark:bg-black dark:bg-opacity-40 dark:filter dark:grayscale"></div>
+
+      <div class="relative max-w-4xl px-8 md:px-16">
+        <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 max-w-xl text-black dark:text-white">
+          IoTrack — IoT Gailuen Informazioa Eskura
+        </h2>
+        <p class="text-xl md:text-2xl max-w-lg text-black dark:text-white">
+          Denbora errealeko IoT datuak, APIak, eta askoz gehiago zure eskura.
+        </p>
+      </div>
+    </section>
     <section id="ZerEgin" class="py-10 px-6">
       <div class="max-w-5xl mx-auto flex flex-wrap gap-6 justify-center">
         <div
-          class="w-full sm:w-[calc(50%-12px)] bg-blue-200  dark:bg-blue-800 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-semibold mb-2">IoT gailu onenak</h3>
-          <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil?</p>
+          class="w-full sm:w-[calc(50%-12px)] bg-c1 dark:bg-dc5 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">IoT Gailu Onenak</h3>
+          <p class="text-sm">Kalitate handiko eta fidagarriak diren IoT gailuak zure beharretara egokituta.</p>
         </div>
         <div
-          class="w-full sm:w-[calc(50%-12px)] bg-blue-500  dark:bg-blue-900 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          class="w-full sm:w-[calc(50%-12px)] bg-c4 dark:bg-dc2 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
           <h3 class="text-xl font-semibold mb-2">Estrategia</h3>
-          <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+          <p class="text-sm">Zure proiektuaren arrakasta bermatzeko planifikazio eta jarraipen estrategikoak.</p>
         </div>
         <div
-          class="w-full sm:w-[calc(50%-12px)] bg-blue-300  dark:bg-blue-950 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-semibold mb-2">Mugikorretarako aplikazioa</h3>
-          <p class="text-sm"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. ...</p>
+          class="w-full sm:w-[calc(50%-12px)] bg-c2 dark:bg-dc3 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Gailuen APIa</h3>
+          <p class="text-sm">Zure IoT gailuen datuak modu erraz eta seguru batean eskuratzeko API indartsua.</p>
         </div>
+
         <div
-          class="w-full sm:w-[calc(50%-12px)] bg-blue-400  dark:bg-blue-700 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-semibold mb-2">Neurrira egindako garapenak</h3>
-          <p class="text-sm">Neurrira egindako proiektuak diseinatzen eta garatzen esperientzia</p>
+          class="w-full sm:w-[calc(50%-12px)] bg-c3 dark:bg-dc4 dark:text-white text-black rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Neurrira Egindako Garapenak</h3>
+          <p class="text-sm">Zure beharren arabera diseinatu eta garatutako software eta hardware soluzio
+            pertsonalizatuak.</p>
         </div>
       </div>
     </section>
 
     <section id="Bloga" class="py-12  w-auto">
-      <h1 class="text-center text-5xl text-black mb-10 font-bold dark:text-white">BLOGA</h1>
+      <h1 class="text-center text-5xl text-black mb-10 font-bold dark:text-white">Erabiltzaileen feedback-a</h1>
       <div class="flex flex-wrap justify-center gap-6 px-6 max-w-7xl mx-auto">
 
         <div
           class="bg-white  dark:bg-gray-300 rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
           <div>
-            <h2 class="text-lg font-semibold mb-2">57.000 lagunekin osatu da Egunean Behinen 17. denboraldia
+            <h2 class="text-lg font-semibold mb-2">IoTrack-ek gure IoT gailuak kontrolatzea erraztu du, datu zehatz eta
+              fidagarriak ematen ditu
             </h2>
             <p class="text-sm text-gray-600 mb-6">2025/04/10</p>
           </div>
@@ -77,8 +129,8 @@
         <div
           class="bg-white dark:bg-gray-300  rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
           <div>
-            <h2 class="text-lg font-semibold mb-2">Lanaren zentzua CodeSyntaxen: lanaren zentzuari buruzko
-              hausnarketa</h2>
+            <h2 class="text-lg font-semibold mb-2">APIaren dokumentazioa oso argia da, gure garatzaileek denbora gutxian
+              integratu ahal izan dute.</h2>
             <p class="text-sm text-gray-600 mb-6">2025/04/06</p>
           </div>
           <div class="flex items-center">
@@ -92,7 +144,8 @@
         <div
           class="bg-white dark:bg-gray-300  rounded-lg shadow-md p-6 w-full sm:w-[300px] flex flex-col justify-between">
           <div>
-            <h2 class="text-lg font-semibold mb-2">MAK21 Ikerketa proiektua arrakastaz amaitu da</h2>
+            <h2 class="text-lg font-semibold mb-2">Neurrira egindako garapenak gure enpresaren behar guztietara egokitu
+              dira, oso profesionalak</h2>
             <p class="text-sm text-gray-600 mb-6">2025/04/01</p>
           </div>
           <div class="flex items-center">
@@ -108,7 +161,7 @@
     <!-- ------------------------------------------------------------------------- -->
 
     <section id="container_queries" class="p-8">
-      <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">Container Queries Demo</h2>
+      <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">Edozein motako IoT gailu monitorizatzen dugu!</h2>
 
       <!-- Contenedor redimensionable marcado como @container -->
       <div id="resizableContainer"
@@ -183,7 +236,7 @@
           <span class="ml-4 text-4xl dark:text-white">gure boletinera</span>
         </h3>
 
-        <p class="text-lg mb-6 dark:text-white">Eman zure posta eta jaso blogeko azken berriak</p>
+        <p class="text-lg mb-6 dark:text-white">Eman zure posta eta jaso gure produktuen azken berriak</p>
 
         <form id="harpidetuForm" class="flex flex-col">
           <div class="mb-4">
@@ -205,14 +258,16 @@
         </form>
       </div>
     </section>
+
     <section id="efect" class="flex justify-center items-center gap-10 p-10">
+
       <div>
-        <img id="filteredImage" src="./img/asdfgh.jpg" alt="LaRosa"
+        <img id="filteredImage" src="./img/dashboard.jpg" alt="filter_img"
           class="rounded-xl w-80 h-auto transition-all duration-300" />
       </div>
       <div class="space-y-4">
+        <p class="text-xl font-bold mb-4 dark:text-white">Dashboard bisualak eta kustomizableak <span></span> </p>
 
-        <p class="text-xl font-bold mb-4 dark:text-white">Lista de filtros <span></span> </p>
 
         <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('grayscale(100%)')">
           <div class="w-6 h-6 rounded-full bg-gradient-to-r from-white to-black border border-black"></div>
@@ -226,26 +281,26 @@
 
         <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('saturate(200%)')">
           <div class="w-6 h-6 rounded-full bg-red-400 border border-black"></div>
-          <span class="dark:text-white">Saturado</span>
+          <span class="dark:text-white">Asea</span>
         </div>
 
         <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('blur(3px)')">
           <div class="w-6 h-6 rounded-full bg-blue-400 border border-black"></div>
-          <span class="dark:text-white">Desenfoque</span>
+          <span class="dark:text-white">Desenfokatua</span>
         </div>
 
         <div class="flex items-center gap-2 cursor-pointer" onclick="applyFilter('none')">
           <div
             class="w-6 h-6 rounded-full border bg-gradient-to-r from-green-100 to-fuchsia-300 via-blue-300 border-black">
           </div>
-          <span class="dark:text-white">Sin filtro</span>
+          <span class="dark:text-white">filtro gabe</span>
         </div>
 
       </div>
 
     </section>
 
-    <section class="flex justify-center items-center gap-10 p-10">
+    <!-- <section class="flex justify-center items-center gap-10 p-10">
       <div class="perspective-1000">
         <img id="tiltImage" src="./img/rana_bb.jpeg" alt="The frog"
           class="rounded-md transition-transform duration-100 will-change-transform" />
@@ -267,7 +322,7 @@
       </div>
 
       <div id="confettiContainer" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 hidden"></div>
-    </section>
+    </section> -->
 
 
 

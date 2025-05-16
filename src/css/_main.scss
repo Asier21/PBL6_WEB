@@ -64,3 +64,25 @@
         }
     }
 }
+
+
+:root {
+    /* Paleta modo claro (colores más claritos) */
+    --c-1: #abd0f5;
+    /* Ejemplo: blanco muy claro */
+    --c-2: #9bc2f5;
+    /* azul clarito */
+    --c-3: #65a1eb;
+    --c-4: #468ef1;
+    --c-5: #146be4;
+}
+
+/* Paleta modo oscuro */
+.dark {
+    --dc-1: #f0f4f8;
+    /* color 1 dark */
+    --dc-2: #bcccdc;
+    --dc-3: #829ab1;
+    --dc-4: #486581;
+    --dc-5: #102a43;
+}
