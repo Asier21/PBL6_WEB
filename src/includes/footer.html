@@ -1,36 +1,60 @@
-<footer class="bg-blue-100 text-blue-900 dark:bg-blue-900 dark:text-blue-100 py-10 px-6 mt-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-
-        <!-- About Section -->
-        <div>
-            <h3 class="font-semibold text-base mb-2">Guri buruz</h3>
-            <p>
-                Denbora errealean IoT gailuak monitorizatzen ditugu, enpresei datu zehatzen eta bistaratze adimendunaren
-                bidez erabaki hobeak hartzen laguntzeko.
-            </p>
-        </div>
-
-        <!-- Links -->
-        <div>
-            <h3 class="font-semibold text-base mb-2">Esteka erabilgarriak</h3>
-            <ul class="space-y-1">
-                <li><a href="#" class="hover:underline">Hasiera</a></li>
-                <li><a href="#" class="hover:underline">Monitorizazio panela</a></li>
-                <li><a href="#" class="hover:underline">Dokumentazioa</a></li>
-                <li><a href="#" class="hover:underline">Kontaktua</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-            <h3 class="font-semibold text-base mb-2">Kontaktua</h3>
-            <p>Emaila: kontaktua@iotempresa.com</p>
-            <p>Tel: +34 600 000 000</p>
-            <p>Kokapena: Donostia, Espainia</p>
-        </div>
+<footer
+  class="mt-10 bg-blue-100 px-6 py-10 text-blue-900 dark:bg-blue-900 dark:text-blue-100"
+>
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-sm md:grid-cols-3">
+    <!-- About Section -->
+    <div>
+      <h3 class="mb-2 text-base font-semibold">Guri buruz</h3>
+      <p>
+        Denbora errealean IoT gailuak monitorizatzen ditugu, enpresei datu
+        zehatzen eta bistaratze adimendunaren bidez erabaki hobeak hartzen
+        laguntzeko.
+      </p>
     </div>
 
-    <div class="mt-10 border-t border-blue-300 dark:border-blue-700 pt-4 text-center text-xs">
-        <p>&copy; 2025 — Agur benur. Eskubide guztiak erreserbatuta.</p>
+    <!-- Links -->
+    <div>
+      <h3 class="mb-2 text-base font-semibold">Esteka erabilgarriak</h3>
+      <ul class="space-y-1">
+        <li><a href="#" class="hover:underline">Hasiera</a></li>
+        <li><a href="#" class="hover:underline">Monitorizazio panela</a></li>
+        <li><a href="#" class="hover:underline">Dokumentazioa</a></li>
+        <li><a href="#" class="hover:underline">Kontaktua</a></li>
+      </ul>
     </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="mb-2 text-base font-semibold">Kontaktua</h3>
+      <p>Emaila: kontaktua@iotempresa.com</p>
+      <p>Tel: +34 600 000 000</p>
+      <p>Kokapena: Donostia, Espainia</p>
+    </div>
+  </div>
+
+  <div
+    class="mt-10 border-t border-blue-300 pt-4 text-center text-xs dark:border-blue-700"
+  >
+    <p>&copy; 2025 — Agur benur. Eskubide guztiak erreserbatuta.</p>
+  </div>
+
+  <!-- Matomo -->
+  <script>
+    var _paq = (window._paq = window._paq || []);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+    (function () {
+      var u = "//localhost:8080/";
+      _paq.push(["setTrackerUrl", u + "matomo.php"]);
+      _paq.push(["setSiteId", "2"]);
+      var d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.async = true;
+      g.src = u + "matomo.js";
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </footer>
