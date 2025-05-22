@@ -46,7 +46,78 @@
       </div>
 
     </section>
+<!-- HERO SOLO PARA PANTALLAS PEQUEÑAS -->
+<section
+  class="relative bg-cover bg-center bg-no-repeat h-screen text-white flex items-center md:hidden"
+  style="background-image: url('./img/banner.png');"
+>
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
+  <div class="relative px-6 z-10">
+    <h1 class="text-4xl font-extrabold mb-4">IoTrack — IoT Gailuen Informazioa Eskura</h1>
+    <p class="text-lg">Denbora errealeko IoT datuak, APIak, eta askoz gehiago zure eskura.</p>
+    <a href="#" class="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-xl">
+      Start Monitoring
+    </a>
+  </div>
+</section>
+
+<!-- HERO PARA PANTALLAS MEDIANAS Y GRANDES -->
+<section class="hidden md:block py-20 lg:py-32 bg-muted/50">
+  <div class="container mx-auto px-6">
+    <div class="grid gap-12 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="text-4xl font-bold sm:text-5xl mb-6">Monitor Your IoT Devices in Real-Time</h1>
+        <p class="text-lg text-muted-foreground max-w-xl mb-6">
+          Get complete visibility into your IoT ecosystem with our comprehensive monitoring platform. Track
+          performance, receive alerts, and optimize operations.
+        </p>
+        <a href="#" class="bg-black hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-xl mx-auto block w-fit">
+  <span>Start Monitoring</span> 
+</a>
+
+      </div>
+      <div class="flex justify-center">
+        <img
+          src="./img/banner.png"
+          alt="IoT Dashboard"
+          class="rounded-xl shadow-lg object-cover max-w-md"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- <section class="py-12 md:py-24 lg:py-32 bg-muted/50">
+          <div class="container px-4 md:px-6">
+            <div class="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+              <div class="flex flex-col justify-center space-y-4">
+                <div class="space-y-2">
+                  <h1 class="text-3xl font-bold tracking-tighter  sm:text-5xl xl:text-6xl/none">
+                    Monitor Your IoT Devices in Real-Time
+                  </h1>
+                  <p class="max-w-[600px] text-muted-foreground md:text-xl">
+                    Get complete visibility into your IoT ecosystem with our comprehensive monitoring platform. Track
+                    performance, receive alerts, and optimize operations.
+                  </p>
+                </div>
+                <div class="flex justify-center object-center" >
+                 <a href="#" class="bg-red-200 rounded-3xl p-2"><span>Start monitoring</span></a>
+                </div>
+              </div>
+              <div class="flex items-center justify-center">
+                <Image
+                  src="./img/banner.png"
+                  width={550}
+                  height={550}
+                  alt="IoT Dashboard"
+                  class="rounded-lg object-cover border shadow-lg"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
     <section class="relative bg-cover bg-center bg-no-repeat h-screen text-white flex items-center"
       style="background-image: url('./img/banner.png');">
@@ -87,7 +158,7 @@
             pertsonalizatuak.</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="Bloga" class="py-12  w-auto">
       <h1 class="text-center text-5xl text-black mb-10 font-bold dark:text-white">Erabiltzaileen feedback-a</h1>
@@ -241,8 +312,61 @@
       </section>
 
     <!-- ------------------------------------------------------------------------- -->
+ <section class="py-12 md:py-24 lg:py-32 text-primary-foreground bg-background">
+  <div class="container px-4 md:px-6">
+    <div class="flex justify-center">
+      <div class="w-full max-w-3xl bg-blue-700 rounded-2xl p-10 sm:p-12 text-center text-white space-y-8 shadow-lg">
+        
+        <!-- Title & Description -->
+        <div class="space-y-3">
+          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Join Our IoT Newsletter</h2>
+          <p class="text-xl text-white/90">
+            Get the latest IoT insights delivered to your inbox monthly.
+          </p>
+        </div>
 
-    <section id="Harpidetu" class="bg-pink-200 rounded-xl py-8 max-w-3xl mx-auto px-4 dark:bg-gray-800">
+        <!-- Form -->
+        <form class="flex flex-col sm:flex-row gap-2 justify-center items-center">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="h-12 px-4 rounded-lg border border-white/20 bg-white/20 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white w-72 sm:w-80"
+            required
+          />
+          <button type="submit" class="h-12 px-6 rounded-3xl bg-white text-blue-700 hover:bg-gray-100 font-semibold transition">
+            Subscribe
+          </button>
+        </form>
+
+        <!-- Subtext -->
+        <p class="text-sm text-white/80">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap justify-center items-center gap-8 pt-4">
+          <div class="flex flex-col items-center">
+            <div class="text-3xl font-bold">5k+</div>
+            <div class="text-sm text-white/80">Subscribers</div>
+          </div>
+          <div class="h-12 w-px bg-white/20 hidden sm:block"></div>
+          <div class="flex flex-col items-center">
+            <div class="text-3xl font-bold">12</div>
+            <div class="text-sm text-white/80">Issues per year</div>
+          </div>
+          <div class="h-12 w-px bg-white/20 hidden sm:block"></div>
+          <div class="flex flex-col items-center">
+            <div class="text-3xl font-bold">100%</div>
+            <div class="text-sm text-white/80">Useful content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <section id="Harpidetu" class="bg-pink-200 rounded-xl py-8 max-w-3xl mx-auto px-4 dark:bg-gray-800">
       <div class="max-w-3xl mx-auto px-4">
         <h3 class="flex items-baseline mb-4">
           <p class="text-4xl font-bold dark:text-white">Harpidetu</p>
@@ -270,7 +394,7 @@
           </button>
         </form>
       </div>
-    </section>
+    </section> -->
 
     <section id="efect" class="flex justify-center items-center gap-10 p-10">
 
