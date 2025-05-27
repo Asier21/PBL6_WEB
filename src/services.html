@@ -12,87 +12,31 @@
 <body class="bg-blue-50 dark:bg-gray-900">
   @@include('./includes/header.html')
 
-  <section class="max-w-6xl mx-auto py-12 px-4">
-    <!-- Tabs -->
-    <div class="grid max-w-md mx-auto grid-cols-2 mb-10 rounded-xl overflow-hidden border bg-white shadow">
-      <button id="monitoringTab" class="tab-button py-3 font-semibold text-gray-700 bg-gray-100 transition">IoT
-        Monitoring</button>
-      <button id="apiTab" class="tab-button py-3 font-semibold text-gray-700 hover:bg-gray-50 transition">IoT
-        API</button>
+<section class="max-w-6xl mx-auto py-12 px-4">
+  <!-- Tabs -->
+  <div class="grid max-w-md mx-auto grid-cols-2 mb-10 rounded-xl overflow-hidden border bg-white shadow">
+    <button id="monitoringTab" class="tab-button py-3 font-semibold text-gray-700 bg-gray-100 transition">IoT Monitorizazioa</button>
+    <button id="apiTab" class="tab-button py-3 font-semibold text-gray-700 hover:bg-gray-50 transition">IoT API</button>
+  </div>
+
+  <!-- Content -->
+  <div class="grid md:grid-cols-2 gap-10 items-stretch">
+    <!-- Text Card -->
+    <div class="flex">
+      <div id="contentBox" class="rounded-2xl bg-blue-300 dark:bg-cyan-800 p-6 shadow-md flex-1 flex flex-col justify-center transition-all duration-500">
+        <!-- Content is injected via JS -->
+      </div>
     </div>
 
-    <!-- Content -->
-    <div class="grid md:grid-cols-2 gap-10 items-start">
-      <!-- Text Card -->
-      <div>
-        <div id="contentBox" class="rounded-2xl bg-blue-50 p-6 shadow-md transition-all duration-500">
-          <!-- Content is injected via JS -->
-        </div>
-      </div>
-
-      <!-- Image/Card -->
-      <div id="visualBox"
-        class="relative rounded-2xl overflow-hidden border shadow-lg bg-gray-900 text-white p-6 min-h-[300px] flex items-center justify-center transition-all duration-500">
+    <!-- Image/Card -->
+    <div class="flex">
+      <div id="visualBox" class="relative rounded-2xl overflow-hidden border shadow-lg bg-gray-900 text-white flex-1 flex items-center justify-center transition-all duration-500">
         <!-- Image or Code Block is injected via JS -->
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <section class="flex flex-col items-center justify-center gap-[30px] px-4 py-12 xl:flex-row">
-    <!-- IoT gailuen monitorizazioa -->
-    <div
-      class="flex h-auto w-[550px] flex-col items-center justify-between gap-[30px] rounded-[45px] bg-[#dceeff] p-10 shadow-[0px_5px_0px_0px_rgba(25,26,35,1.00)] outline outline-1 outline-offset-[-1px] outline-black md:flex-row">
-      <div class="flex max-w-md flex-col gap-[20px]">
-        <h3 class="text-3xl font-medium leading-snug text-black">
-          IoT gailuen<br />
-          monitorizazioa
-        </h3>
-        <p class="text-base leading-relaxed text-black">
-          Gure enpresak IoT gailuen segurtasuna eta jarduera zaintzeko
-          webapp bat eskaintzen du, hiru datu-iturritan oinarrituta
-        </p>
-
-        <div class="flex items-center gap-2">
-          <div class="flex h-6 w-6 items-center justify-center rounded-full bg-black">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          <a href="./pricing.html" class="text-base text-black">Kontratatu</a>
-        </div>
-      </div>
-      <img src="./img/iot_ser.png" alt="IoT" class="w-[210px]" />
-    </div>
-
-    <!-- API zerbitzua -->
-    <div
-      class="flex h-auto w-[550px] flex-col items-center justify-between gap-[30px] rounded-[45px] bg-[#cce5ff] p-10 shadow-[0px_5px_0px_0px_rgba(25,26,35,1.00)] outline outline-1 outline-offset-[-1px] outline-black md:flex-row">
-      <div class="flex max-w-md flex-col gap-[20px]">
-        <h3 class="text-3xl font-medium leading-snug text-black">
-          API bidezko<br />
-          datu sarbidea
-        </h3>
-        <p class="text-base leading-relaxed text-black">
-          Zerbitzu honek erakundearen datu prozesatuetara sarbidea ematen
-          du, eta horri esker, erakunde eta bezeroek datuak modu errazean
-          lor ditzakete ataza automatizatuak eta aplikazio pribatuko
-          erabilerak egiteko.
-        </p>
-        <div class="flex items-center gap-2">
-          <div class="flex h-6 w-6 items-center justify-center rounded-full bg-black">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          <a href="./pricing.html" class="text-base text-black">Kontratatu</a>
-        </div>
-      </div>
-      <img src="./img/Api.png" alt="API" class="w-[210px]" />
-    </div>
-  </section>
 
   <section>
     <div class="mx-auto max-w-screen-xl px-4 py-8 dark:bg-gray-900 sm:py-16 lg:px-6 xl:px-0">
@@ -102,37 +46,37 @@
         </h2>
       </div>
       <div class="mb-4 space-y-4 md:mb-8 md:grid md:grid-cols-3 md:gap-4 md:space-y-0 xl:gap-16">
-        <div class="flex items-center justify-center rounded-xl bg-blue-200 p-6 text-center dark:bg-gray-300 xl:p-12">
+        <div class="flex items-center justify-center rounded-xl bg-blue-200 p-6 text-center dark:bg-cyan-600 xl:p-12">
           <div class="text-gray-900">
-            <p class="mb-2 text-4xl font-extrabold md:text-5xl">24,837</p>
-            <h3 class="mb-2 text-xl font-semibold">interakzio</h3>
-            <p class="font-light text-gray-500 dark:text-gray-800">
+            <p class="mb-2 text-4xl font-extrabold md:text-5xl dark:text-white">24,837</p>
+            <h3 class="mb-2 text-xl font-semibold dark:text-white">interakzio</h3>
+            <p class="font-light text-black dark:text-white">
               Erregistratutako konpromisoak
             </p>
           </div>
         </div>
-        <div class="flex items-center justify-center rounded-xl bg-blue-400 p-6 text-center dark:bg-gray-300 xl:p-12">
+        <div class="flex items-center justify-center rounded-xl bg-blue-400 p-6 text-center dark:bg-cyan-800  xl:p-12">
           <div class="text-gray-900">
-            <p class="mb-2 text-4xl font-extrabold md:text-5xl">590</p>
-            <h3 class="mb-2 text-xl font-semibold">Enpresa-bezeroak</h3>
-            <p class="font-light text-gray-500 dark:text-gray-800">
+            <p class="mb-2 text-4xl font-extrabold md:text-5xl dark:text-white">590</p>
+            <h3 class="mb-2 text-xl font-semibold dark:text-white">Enpresa-bezeroak</h3>
+            <p class="font-light text-black dark:text-white">
               Zerbitzatua
             </p>
           </div>
         </div>
-        <div class="flex items-center justify-center rounded-xl bg-blue-200 p-6 text-center dark:bg-gray-300 xl:p-12">
+        <div class="flex items-center justify-center rounded-xl bg-blue-200 p-6 text-center dark:bg-cyan-600 xl:p-12">
           <div class="text-gray-900">
-            <p class="mb-2 text-4xl font-extrabold md:text-5xl">1,234</p>
-            <h3 class="mb-2 text-xl font-semibold">
+            <p class="mb-2 text-4xl font-extrabold md:text-5xl dark:text-white">1,234</p>
+            <h3 class="mb-2 text-xl font-semibold dark:text-white">
               Erabiltzaile aktiboak
             </h3>
-            <p class="font-light text-gray-500 dark:text-gray-800">
+            <p class="font-light text-black dark:text-white">
               Gure aplikazioan
             </p>
           </div>
         </div>
       </div>
-      <p class="text-center text-sm font-light text-gray-500 dark:text-gray-100">
+      <p class="text-center text-sm font-light text-black dark:text-white">
         Azken eguneratzea: 2024ko otsailaren 29an, 19:12an.
       </p>
     </div>
@@ -148,7 +92,7 @@
             IoTrack-ek gure IoT gailuak kontrolatzea erraztu du, datu zehatz
             eta fidagarriak ematen ditu
           </h2>
-          <p class="mb-6 text-sm text-gray-600">2025/04/10</p>
+          <p class="mb-6 text-sm text-gray-600 dark:text-black">2025/04/10</p>
         </div>
         <div class="flex items-center">
           <img src="./img/rana_bb.jpeg" alt="Autor" class="mr-3 h-10 w-10 rounded-full bg-[#bdd500]" />
@@ -162,7 +106,7 @@
             APIaren dokumentazioa oso argia da, gure garatzaileek denbora
             gutxian integratu ahal izan dute.
           </h2>
-          <p class="mb-6 text-sm text-gray-600">2025/04/06</p>
+          <p class="mb-6 text-sm text-gray-600 dark:text-black">2025/04/06</p>
         </div>
         <div class="flex items-center">
           <div class="mr-2 text-xl font-bold text-black">
@@ -178,7 +122,7 @@
             Neurrira egindako garapenak gure enpresaren behar guztietara
             egokitu dira, oso profesionalak
           </h2>
-          <p class="mb-6 text-sm text-gray-600">2025/04/01</p>
+          <p class="mb-6 text-sm text-gray-600 dark:text-black">2025/04/01</p>
         </div>
         <div class="flex items-center">
           <div class="mr-2 text-xl font-bold text-black">

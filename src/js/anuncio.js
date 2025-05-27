@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 //zerbitzuak
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,39 +29,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Contenido para cada tab
   const monitoringContent = `
-    <h3 class="text-2xl font-bold mb-2">Comprehensive IoT Monitoring</h3>
-    <p class="text-gray-600 mb-4">
-      Real-time visibility into your entire IoT ecosystem.
+    <h3 class="text-2xl font-bold mb-2 dark:text-white">IoT Monitorizazioa</h3>
+    <p class="text-gray-600 dark:text-white mb-4">
+  Zure IoT ekosistema osoaren ikusgarritasuna denbora errealean.
     </p>
-    <ul class="space-y-2 text-sm text-gray-700">
+    <ul class="space-y-2 text-sm text-gray-700 dark:text-white">
       <li class="flex items-start gap-2">
-        <span>✔</span> Real-time monitoring with millisecond precision
+        <span>✔</span>Milisegundoko zehaztasunarekin denbora errealeko monitorizazioa
       </li>
       <li class="flex items-start gap-2">
-        <span>✔</span> Customizable dashboards and reports
+        <span>✔</span> Pertsonalizatu daitezkeen kontrol-panelak
       </li>
       <li class="flex items-start gap-2">
-        <span>✔</span> Intelligent alerting & predictive maintenance
+        <span>✔</span>  Alertak adimendunak eta mantentze prediktiboa
       </li>
       <li class="flex items-start gap-2">
-        <span>✔</span> Historical data and querying
+        <span>✔</span> Datu historikoak eta kontsultak
       </li>
     </ul>
   `;
 
   const monitoringVisual = `
     <div class="text-center">
-      <p class="text-lg font-semibold mb-2">IoT Monitoring Dashboard</p>
-      <p class="text-gray-300 text-sm">Real-time visualization of your IoT system</p>
+     <img src="./img/IoT_10.png" alt="Nature" class="w-full h-full object-cover rounded">
     </div>
   `;
 
   const apiContent = `
-    <h3 class="text-2xl font-bold mb-2">IoT API Integratua</h3>
-    <p class="text-gray-600 mb-4">
+    <h3 class="text-2xl font-bold mb-2 dark:text-white">IoT API Integratua</h3>
+    <p class="text-gray-600 dark:text-white mb-4">
       Gure IoT API-k zure gailuak, datuak eta sistemak integratzeko aukera ematen du.
     </p>
-    <ul class="space-y-2 text-sm text-gray-700">
+    <ul class="space-y-2 text-sm text-gray-700 dark:text-white">
       <li class="flex items-start gap-2">
         <span>✔</span> REST API erraza eta dokumentatua
       </li>
@@ -82,14 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   const apiVisual = `
-    <pre class="text-green-400 font-mono text-sm overflow-x-auto">
-GET /api/v1/devices
-{
-  "id": "dev_1234",
-  "status": "online",
-  "battery": 87
-}
-    </pre>
+   <div class="text-center">
+     <img src="./img/IoT_11.png" alt="Nature" class="w-full h-full object-cover rounded">
+    </div>
   `;
 
   function activateTab(tab) {
