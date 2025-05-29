@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Contenido para cada tab
   const monitoringContent = `
     <h3 class="text-2xl font-bold mb-2 dark:text-white">IoT Monitorizazioa</h3>
-    <p class="text-gray-600 dark:text-white mb-4">
+    <p class="text-black dark:text-white mb-4">
   Zure IoT ekosistema osoaren ikusgarritasuna denbora errealean.
     </p>
     <ul class="space-y-2 text-sm text-gray-700 dark:text-white">

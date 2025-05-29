@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="js/app.js?v=468021e428d3c0e0d3c4295f9e8fe795" defer></script>
+    <title>Erabiltzaile kudeaketa</title>
+  </head>
+  <body class="bg-blue-50 dark:bg-gray-900">
+    @@include('./includes/header.html')
+
+    <main class="px-4 py-8 md:px-20 lg:px-40">
+      <div class="mb-6 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-blue-800 dark:text-cyan-300">
+          Erabiltzaile kudeaketa
+        </h1>
+        <button
+          id="new-user-btn"
+          class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+        >
+          Erabiltzailea Sortu
+        </button>
+      </div>
+
+      <div class="overflow-x-auto rounded-lg bg-white shadow dark:bg-gray-800">
+        <table class="min-w-full table-auto">
+          <thead class="bg-blue-200 dark:bg-cyan-900">
+            <tr>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                ID
+              </th>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                Izena
+              </th>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                Abizena
+              </th>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                Pasahitza
+              </th>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                Email
+              </th>
+              <th class="px-4 py-2 text-left text-blue-800 dark:text-cyan-300">
+                Ekintzak
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            id="users-table-body"
+            class="divide-y divide-gray-200 dark:divide-gray-700"
+          >
+            <!-- Filas generadas dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal de Crear / Editar -->
+      <div
+        id="user-modal"
+        class="fixed inset-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm"
+      >
+        <div
+          class="w-full max-w-md rounded-lg bg-white p-6 shadow-xl dark:bg-gray-800"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <h2
+              id="modal-title"
+              class="text-xl font-bold text-blue-800 dark:text-cyan-300"
+            ></h2>
+            <button
+              id="modal-close"
+              class="text-2xl font-bold text-gray-600 hover:text-gray-800 dark:text-gray-300"
+            >
+              &times;
+            </button>
+          </div>
+          <form id="user-form" class="space-y-4">
+            <input type="hidden" id="user-id" />
+            <div>
+              <label for="user-name" class="mb-1 block text-indigo-500"
+                >Izena</label
+              >
+              <input
+                id="user-name"
+                type="text"
+                required
+                class="w-full rounded border border-indigo-500 px-3 py-2 focus:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+            <div>
+              <label for="user-surname" class="mb-1 block text-indigo-500"
+                >Abizena</label
+              >
+              <input
+                id="user-surname"
+                type="text"
+                required
+                class="w-full rounded border border-indigo-500 px-3 py-2 focus:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+            <div>
+              <label for="user-email" class="mb-1 block text-indigo-500"
+                >Email</label
+              >
+              <input
+                id="user-email"
+                type="email"
+                required
+                class="w-full rounded border border-indigo-500 px-3 py-2 focus:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+
+            <div>
+              <label for="user-password" class="mb-1 block text-indigo-500"
+                >Pasahitza</label
+              >
+              <input
+                id="user-password"
+                type="password"
+                required
+                class="w-full rounded border border-indigo-500 px-3 py-2 focus:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+
+            <div class="flex justify-end">
+              <button
+                type="submit"
+                class="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
+              >
+                Gorde
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    @@include('./includes/footer.html')
+  </body>
+</html>
