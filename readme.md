@@ -1,3 +1,13 @@
+# Dependencies
+To run this project, you need to have the following installed on your system:
+Node.js (includes npm)
+
+Please refer to the official Node.js documentation for installation instructions based on your operating system.
+This project has been tested with the following versions:
+Node.js: v20.18.0  
+npm: 10.8.2
+Other versions may work.
+
 # Gulp with TailwindCSS Starter Kit
 
 Gulp with TailwindCSS v3 Starter Kit ( ~~Updated with [TailwindCSS JIT](https://github.com/tailwindlabs/tailwindcss-jit)~~ - **latest tailwind has JIT is built-in** ) - A repo that makes your development easier with predefined gulp tasks that help you to use [tailwindcss](https://github.com/tailwindcss/tailwindcss) with simple commands.
