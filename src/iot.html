@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/app.css" />
+    <script src="js/app.js?v=468021e428d3c0e0d3c4295f9e8fe795" defer></script>
+    <title>IoT</title>
+
+</head>
+
+<body class="bg-blue-50 dark:bg-gray-900">
+    @@include('./includes/header.html')
+
+    <main>
+        <!-- Botón volver -->
+        <div class="mb-6 p-10">
+            <a href="party.html"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow">
+                Bueltatu
+            </a>
+        </div>
+
+        <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center">
+            IOT - Temperatura Sensor A1
+        </h1>
+
+
+        <!-- Primera sección: iframe que ocupa todo el ancho con padding -->
+        <section class="w-full p-6">
+            <iframe
+                src="https://demo.elastic.co/app/dashboards#/view/security-detection-rule-monitoring-default?_g=(refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=()board"
+                class="w-full h-[800px] rounded shadow" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <!-- Segunda sección: dos paneles lado a lado -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6">
+            <iframe src="https://demo.elastic.co/app/dashboards#/view/edf84fe0-e1a0-11e7-b6d5-4dc382ef7f5b?_g=()&_a=()"
+                class="w-full h-[800px] rounded shadow" frameborder="0" allowfullscreen></iframe>
+            <iframe
+                src="https://demo.elastic.co/app/dashboards#/view/kubernetes-b945b7b0-bcb1-11ec-b64f-7dd6e8e82013?_g=(refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=()"
+                class="w-full h-[800px] rounded shadow" frameborder="0" allowfullscreen></iframe>
+        </section>
+    </main>
+    @@include('./includes/footer.html')
+
+
+</body>
+
+</html>

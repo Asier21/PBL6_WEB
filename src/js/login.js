@@ -59,3 +59,6 @@ function logout() {
   window.location.href = "login.html"; // O recarga actual: location.reload();
 }
 window.logout = logout;
+
+
+

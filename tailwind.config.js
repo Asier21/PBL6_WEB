@@ -39,5 +39,22 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
+  safelist: [
+    // aquí las clases que generas dinámicamente en JS
+    'text-yellow-500',
+    'bg-yellow-100',
+    'text-yellow-800',
+    'text-red-500',
+    'bg-red-100',
+    'bg-red-400',
+    'text-red-800',
+    'text-green-300',
+    'text-blue-500',
+    'bg-gray-200',
+    'text-black',
+    'bg-yellow-400',
+    'dark:hover:bg-cyan-900',
+    'dark:bg-cyan-800',
+  ],
 };
 

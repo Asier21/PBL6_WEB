@@ -32,92 +32,105 @@
     @@include('./includes/header.html')
 
     <main>
-        <section class="p-6 bg-white">
-            <div
-                class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+        <!-- Ejemplo  LINE CHART-->
+        <section class="p-6">
+            <section class="px-4 py-6">
+                <div class="w-full max-w-7xl mx-auto rounded-xl shadow-md p-6 bg-blue-100 dark:bg-cyan-900">
+                    <h2 class="text-2xl font-bold mb-1 text-blue-900 dark:text-cyan-300">Ingurumen metrikak</h2>
+                    <p class="text-sm text-blue-800 dark:text-cyan-300 mb-4">
+                        Azken 24 orduetako tenperatura eta hezetasun irakurketak
+                    </p>
+                    <div class="overflow-x-auto">
+                        <canvas id="lineChart"
+                            class="min-w-[700px] h-[400px] bg-white dark:bg-cyan-800 rounded-lg"></canvas>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Tarjeta grande -->
-                <div class="relative col-span-2 row-span-2 rounded-xl overflow-hidden">
-                    <img src="./img/frogi.jpg" alt="Treehouses" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Treehouses
+
+        </section>
+
+        <path
+            d="M30,19H26V15H24v9H8V8l9-.0009V6H13V2H11V6H8A2.002,2.002,0,0,0,6,8v3H2v2H6v6H2v2H6v3a2.0023,2.0023,0,0,0,2,2h3v4h2V26h6v4h2V26h3a2.0027,2.0027,0,0,0,2-2V21h4Z" />
+        <path d="M21,21H11V11H21Zm-8-2h6V13H13Z" />
+        <path d="M31,13H29A10.0117,10.0117,0,0,0,19,3V1A12.0131,12.0131,0,0,1,31,13Z" />
+        <path d="M26,13H24a5.0059,5.0059,0,0,0-5-5V6A7.0085,7.0085,0,0,1,26,13Z" />
+        <!-- Paneles IoT Y lista de alertas -->
+        <section class="grid gap-6 lg:grid-cols-2 p-6">
+            <!-- IoT Devices Panel -->
+            <div class="flex flex-col border rounded-xl bg-white dark:bg-cyan-700 shadow-md">
+                <div class="p-4 border-b">
+                    <h2 class="flex items-center gap-2 text-lg font-semibold dark:text-white">
+                        <span class="inline-flex items-center justify-center bg-blue-200 rounded-full p-1">
+
+                            <svg class="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 32 32">
+                                <path
+                                    d="M30,19H26V15H24v9H8V8l9-.0009V6H13V2H11V6H8A2.002,2.002,0,0,0,6,8v3H2v2H6v6H2v2H6v3a2.0023,2.0023,0,0,0,2,2h3v4h2V26h6v4h2V26h3a2.0027,2.0027,0,0,0,2-2V21h4Z" />
+                                <path d="M21,21H11V11H21Zm-8-2h6V13H13Z" />
+                                <path d="M31,13H29A10.0117,10.0117,0,0,0,19,3V1A12.0131,12.0131,0,0,1,31,13Z" />
+                                <path d="M26,13H24a5.0059,5.0059,0,0,0-5-5V6A7.0085,7.0085,0,0,1,26,13Z" />
+
+                            </svg>
+                        </span>
+                        IoT Gailuak
+                    </h2>
+                    <p class="text-sm text-black dark:text-white">Monitorizatu eta kudeatu konektatutako IoT gailuak</p>
+
+                    <!-- Filters -->
+                    <div class="flex flex-col gap-2 sm:flex-row mt-4">
+                        <div class="relative flex-1">
+                            <input type="text" id="search-input" placeholder="Gailuak bilatu..."
+                                class="pl-8 pr-3 py-2 border rounded-md w-full " />
+
+                            <svg class="absolute left-2 top-2.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 103 10.5a7.5 7.5 0 0013.65 6.15z" />
+                            </svg>
+                        </div>
+                        <select id="status-filter" class="w-full sm:w-[140px] border rounded-md p-2">
+                            <option value="all">Edozein </option>
+                            <option value="online">Online</option>
+                            <option value="offline">Offline</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Tarjeta normal -->
-                <div class="relative rounded-xl overflow-hidden">
-                    <img src="./img/frogi.jpg" alt="Mansions" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Mansions
-                    </div>
+                <!-- Device List -->
+                <div class="overflow-y-auto max-h-[400px] p-4 space-y-3" id="device-list">
+                    <!-- Devices will be injected here -->
+                </div>
+            </div>
+
+            <!-- Alerts Panel -->
+            <div class="flex flex-col border  rounded-xl bg-white dark:bg-cyan-700 shadow-md">
+                <div class="p-4 border-b dark:text-white ">
+                    <h2 class="flex items-center gap-2 text-lg font-semibold">
+                        <span class="inline-flex items-center justify-center bg-orange-400 rounded-full p-1">
+                            <svg class="h-4 w-4 stroke-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.29 3.86L1.82 18a1 1 0 00.86 1.5h18.64a1 1 0 00.86-1.5L13.71 3.86a1 1 0 00-1.72 0zM12 9v4m0 4h.01" />
+                            </svg>
+                        </span>
+                        Azkenengo alertak
+                    </h2>
+
+                    <p class="text-sm text-black dark:text-white">Sistemaren alerten eta jakinarazpenen erregistro
+                        historikoa</p>
                 </div>
 
-                <!-- Tarjeta normal -->
-                <div class="relative rounded-xl overflow-hidden">
-                    <img src="./img/sapoo.jpeg" alt="Lakefront cottages" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Lakefront cottages
-                    </div>
-                </div>
-
-                <!-- Tarjeta horizontal -->
-                <div class="relative col-span-2 rounded-xl overflow-hidden">
-                    <img src="./img/rana_bb.jpeg" alt="Designer homes" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Designer homes
-                    </div>
-                </div>
-
-                <!-- Más tarjetas -->
-                <div class="relative rounded-xl overflow-hidden">
-                    <img src="./img/sapoo.jpeg" alt="Cabins" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Cabins
-                    </div>
-                </div>
-
-                <div class="relative col-span-2 row-span-1 rounded-xl overflow-hidden">
-                    <img src="./img/frogi.jpg" alt="Modern Lofts" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Modern Lofts
-                    </div>
-                </div>
-
-                <!-- Tarjeta tipo 6: Ancha baja -->
-                <div class="relative col-span-2 row-span-1 rounded-xl overflow-hidden">
-                    <img src="./img/rana_bb.jpeg" alt="Modern Lofts" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Modern Lofts
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Tarjeta tipo 10: Horizontal gif -->
-                <div class="relative col-span-2 rounded-xl overflow-hidden">
-                    <img src="./img/sapoo.jpeg" alt="Luxury Pods" class="w-full h-full object-cover">
-                    <div
-                        class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-lg font-semibold">
-                        Luxury Pods
-                    </div>
+                <!-- Alert List -->
+                <div class="overflow-y-auto max-h-[400px] p-4 space-y-3 " id="alert-list">
+                    <!-- Alerts will be injected here -->
                 </div>
             </div>
         </section>
 
 
-        <p>SISISIS</p>
 
     </main>
     @@include('./includes/footer.html')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </body>
