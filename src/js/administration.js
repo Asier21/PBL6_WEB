@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <td class="px-4 py-2 text-blue-800 dark:text-cyan-300">${user.password}</td>
         <td class="px-4 py-2 text-blue-800 dark:text-cyan-300">${user.email}</td>
         <td class="px-4 py-2 space-x-2">
-          <button data-id="${user.id}" class="edit-btn rounded bg-yellow-400 hover:bg-yellow-500 px-2 py-1 text-white">Editatu</button>
-          <button data-id="${user.id}" class="delete-btn rounded bg-red-500 hover:bg-red-600 px-2 py-1 text-white">Ezabatu</button>
+          <button data-id="${user.id}" class="edit-btn rounded bg-cyan-700 hover:bg-cyan-800 px-2 py-1 text-white">Editatu</button>
+          <button data-id="${user.id}" class="delete-btn rounded bg-red-600 hover:bg-red-700 px-2 py-1 text-white">Ezabatu</button>
         </td>
       `;
       tableBody.appendChild(tr);
