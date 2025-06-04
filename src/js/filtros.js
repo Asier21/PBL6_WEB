@@ -131,6 +131,12 @@ function initTheme() {
 function toggleTheme() {
   const isDark = document.documentElement.classList.toggle("dark");
   localStorage.setItem("theme", isDark ? "dark" : "light");
+  // Matomo tracking
+  if (isDark) {
+    _paq.push(["trackEvent", "UI", "Enable Dark Mode"]);
+  } else {
+    _paq.push(["trackEvent", "UI", "Disable Dark Mode"]);
+  }
 }
 
 // Espera a tener el DOM listo, inicializa y enlaza el botón correcto
@@ -157,17 +163,33 @@ document.addEventListener("DOMContentLoaded", () => {
       planDisplay.textContent = planName;
       planHiddenInput.value = planName;
       modal.classList.remove("hidden");
+
+      //Matomo
+      if (typeof _paq !== "undefined") {
+        _paq.push(["trackEvent", "Planes", "Click - Planes", planName]);
+      }
     });
   });
 
   closeBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
+    // Matomo: Cierre con la X
+    const selectedPlan = planHiddenInput.value;
+    if (typeof _paq !== "undefined") {
+      _paq.push(["trackEvent", "Planes", "Cerrar Form princing", selectedPlan]);
+    }
   });
 
   // Opcional: cerrar si clicas fuera del modal
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.classList.add("hidden");
+    }
+
+    // Matomo: Cierre haciendo clic fuera del modal
+    const selectedPlan = planHiddenInput.value;
+    if (typeof _paq !== "undefined") {
+      _paq.push(["trackEvent", "Planes", "Cerrar Form princing", selectedPlan]);
     }
   });
 
@@ -176,6 +198,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const modal = document.getElementById("plan-modal");
     const alertBox = document.getElementById("success-alert");
+
+    //  Matomo envío del formulario
+    const selectedPlan = document.getElementById("selected-plan-hidden").value;
+    if (typeof _paq !== "undefined") {
+      _paq.push([
+        "trackEvent",
+        "Planes",
+        "Formulario Princing enviado",
+        selectedPlan,
+      ]);
+    }
 
     // 1) Cierra el modal
     modal.classList.add("hidden");
@@ -209,6 +242,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    //Matomo
+    _paq.push([
+      "trackEvent",
+      "Newsletter",
+      "Submit - Newsletter",
+      "Harpidetza buletina",
+    ]);
 
     // 1) Mostrar confeti
     launchConfetti();

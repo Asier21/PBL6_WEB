@@ -9,12 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cerrar modal al pulsar la X
   closeBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
+
+    // Matomo: cerrar con la X
+    if (typeof _paq !== "undefined") {
+      _paq.push(["trackEvent", "Anuncio", "Cerrar Anuncio", "Iragarkia X"]);
+    }
   });
 
   // Cerrar modal si se hace clic fuera del contenido
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.classList.add("hidden");
+    }
+    // Matomo: cerrar haciendo clic fuera
+    if (typeof _paq !== "undefined") {
+      _paq.push(["trackEvent", "Anuncio", "Cerrar Anuncio", "Iragarkia Out"]);
     }
   });
 });
