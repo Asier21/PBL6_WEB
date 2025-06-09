@@ -13,28 +13,34 @@
 
     <main>
       <div class="flex h-screen">
-        <div class="m-auto w-full max-w-xs rounded bg-indigo-100 p-5">
-          <img class="mx-auto mb-5 w-20" src="./img/logo.png" />
+        <div
+          class="m-auto w-full max-w-xs border-cyan-300 bg-blue-200 p-5 dark:bg-cyan-900"
+        >
+          <img
+            class="mx-auto mb-5 w-20 rounded-full"
+            src="./img/logo_White.jpg"
+            alt="IoTrack logo"
+          />
           <form id="login-form">
             <div>
-              <label class="mb-2 block text-indigo-500" for="username"
+              <label class="mb-2 block dark:text-cyan-300" for="username"
                 >Username</label
               >
               <input
                 id="username"
-                class="mb-6 w-full border-b-2 border-indigo-500 p-2 text-indigo-700 outline-none focus:bg-gray-300"
+                class="outline-non mb-6 w-full border-b-2 border-cyan-500 p-2 text-black"
                 type="text"
                 name="username"
                 placeholder="write your username?"
               />
             </div>
             <div>
-              <label class="mb-2 block text-indigo-500" for="password"
+              <label class="mb-2 block dark:text-cyan-300" for="password"
                 >Password</label
               >
               <input
                 id="password"
-                class="mb-6 w-full border-b-2 border-indigo-500 p-2 text-indigo-700 outline-none focus:bg-gray-300"
+                class="mb-6 w-full border-b-2 border-cyan-500 p-2 text-black outline-none"
                 type="password"
                 name="password"
                 placeholder="write your Password?"
@@ -42,7 +48,7 @@
             </div>
             <div>
               <input
-                class="mb-6 w-full rounded bg-indigo-700 px-4 py-2 font-bold text-white hover:bg-pink-700"
+                class="mb-6 w-full rounded bg-blue-400 px-4 py-2 font-bold text-black hover:bg-blue-300 dark:bg-cyan-500 dark:hover:bg-cyan-300"
                 type="submit"
                 value="Login"
               />

@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoutLink = document.getElementById("logout-link");
   const adminLink = document.getElementById("admin-link");
 
+  const notifLink = document.getElementById("notif-link");
+
   if (dashboardLink) {
     dashboardLink.style.display = isLoggedIn ? "list-item" : "none";
   }
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (adminLink) {
     adminLink.style.display = isLoggedIn && isAdmin ? "list-item" : "none";
   }
+  if (notifLink) notifLink.style.display = isLoggedIn ? "list-item" : "none";
 
   // Formulario de login...
   const loginForm = document.getElementById("login-form");
@@ -60,5 +63,28 @@ function logout() {
 }
 window.logout = logout;
 
+//Campanita
+function toggleNotifications() {
+  const panel = document.getElementById("notif-panel");
+  panel.classList.toggle("hidden");
+}
 
+function saveNotificationPrefs() {
+  // Aquí recogerías los estados de los checkboxes y harías fetch/post al servidor
+  const checked = Array.from(
+    document.querySelectorAll("#notif-panel input[type=checkbox]:checked")
+  ).map((cb) => cb.parentNode.textContent.trim());
+  console.log("Preferencias guardadas:", checked);
+  // Cierra el panel
+  document.getElementById("notif-panel").classList.add("hidden");
+  // Mostrar toast/aviso de éxito si quieres…
+}
 
+// Opcional: cierra al hacer clic fuera
+document.addEventListener("click", (e) => {
+  const panel = document.getElementById("notif-panel");
+  const btn = document.getElementById("btn-notifications");
+  if (!panel.contains(e.target) && !btn.contains(e.target)) {
+    panel.classList.add("hidden");
+  }
+});

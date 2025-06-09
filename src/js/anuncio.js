@@ -2,29 +2,40 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("welcome-modal");
   const closeBtn = document.getElementById("close-modal");
+  const seenAd = localStorage.getItem("seenNewsletterAd");
 
-  // Mostrar siempre la modal (modo pruebas)
-  modal.classList.remove("hidden");
+  // Solo mostrar si no se ha visto antes
+  if (!seenAd) {
+    modal.classList.remove("hidden");
+  }
 
-  // Cerrar modal al pulsar la X
-  closeBtn.addEventListener("click", () => {
+  function closeModal(reason) {
     modal.classList.add("hidden");
+    localStorage.setItem("seenNewsletterAd", "true"); // marcar como mostrado
 
-    // Matomo: cerrar con la X
     if (typeof _paq !== "undefined") {
-      _paq.push(["trackEvent", "Anuncio", "Cerrar Anuncio", "Iragarkia X"]);
+      _paq.push(["trackEvent", "Anuncio", "Cerrar Anuncio", reason]);
+    }
+  }
+
+  // Cerrar con la X
+  closeBtn?.addEventListener("click", () => closeModal("Iragarkia X"));
+
+  // Cerrar haciendo clic fuera
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal("Iragarkia Out");
     }
   });
 
-  // Cerrar modal si se hace clic fuera del contenido
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.add("hidden");
-    }
-    // Matomo: cerrar haciendo clic fuera
-    if (typeof _paq !== "undefined") {
-      _paq.push(["trackEvent", "Anuncio", "Cerrar Anuncio", "Iragarkia Out"]);
-    }
+  // Si clican el CTA, cerrar y hacer scroll al formulario
+  const ctaBtn = modal.querySelector("a[href='#newsletter-form']");
+  ctaBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeModal("Harpidetu Btn");
+    document
+      .querySelector("#newsletter-form")
+      ?.scrollIntoView({ behavior: "smooth" });
   });
 });
 

@@ -86,3 +86,15 @@
     --dc-4: #486581;
     --dc-5: #102a43;
 }
+
+
+nav a.active {
+  font-weight: bold;
+  
+  text-decoration:overline;
+}
+
+.dark nav a.active {
+    font-weight: bold;
+
+}

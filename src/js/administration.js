@@ -62,14 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function attachRowEvents() {
     document.querySelectorAll(".edit-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const u = users.find((u) => u.id == btn.dataset.id);
+        const u = users.find((u) => +u.id === +btn.dataset.id);
         openModal(true, u);
       });
     });
     document.querySelectorAll(".delete-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         if (confirm("Erabiltzailea ezabatu nahi duzu?")) {
-          users = users.filter((u) => u.id != btn.dataset.id);
+          users = users.filter((u) => +u.id !== +btn.dataset.id);
           saveUsers();
           renderTable();
         }
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (id) {
       users = users.map((u) =>
-        u.id == id ? { id, name, surname, password, email } : u
+        +u.id === +id ? { id: +id, name, surname, password, email } : u
       );
     } else {
       const newId = users.length ? Math.max(...users.map((u) => +u.id)) + 1 : 1;

@@ -148,6 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", toggleTheme);
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav a[href]");
+  const currentPath = window.location.pathname.split("/").pop();
+
+  links.forEach((link) => {
+    const linkPath = link.getAttribute("href").split("/").pop();
+    if (linkPath === currentPath) {
+      link.classList.add("active");
+    }
+  });
+});
 
 //Pricing
 document.addEventListener("DOMContentLoaded", () => {
@@ -288,4 +299,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
+});
+
+//Header
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll("nav a[href]");
+
+  navLinks.forEach((link) => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+
+    // Comparar nombre de archivo (por ejemplo: pricing.html === pricing.html)
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
 });
